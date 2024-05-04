@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        grid map
+    </title>
+    <style>
+
+        .cell {
+            width: 50px;
+            height: 50px;
+            /*border:1px;*/
+            display: inline-block;
+        }
+
+        .start {
+            background-color: green;
+        }
+        .end {
+            background-color: red;
+        }
+        .obstacle {
+            background-color: grey;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <h1 align="center">
+        Grid Map
+    </h1>
+    <!---<div id="grid">
+        <table id="cell" align="center" vertical-align="middle">
+            {%for row in grid %}
+            <tr>
+                {% for cell in row %}
+                <td class="cell">
+                    {{cell}}
+                </td>
+                {% endfor %}
+            </tr>
+            {%endfor%}
+        </table>
+    </div>---->
+
+    <div id="grid" align="center">
+        {%for row in grid %}
+        <div class="row">
+            {%for cell in row %}
+           <div class="cell" id="{{i}} - {{j}}">{{cell}}</div>
+           {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        let startcell = null;
+        let endcell = null;
+        
+        document.addEventListener("DOMContentLoaded"), function(){
+            const text = document.querySelector(".change-color");
+
+            text.addEventListener("mouseover",)
+        };
+        /*document.querySelectorall('.cell').foreach(cell => {
+            cell.addEventListener('click',() => {
+                const[row,col] = cell.id.split('-').map(Number);
+                if (cell.classList.contains('start')) {
+                    cell.classList.remove('start');
+                    startCell = null;
+                } else if (cell.classList.contains('end')) {
+                    cell.classList.remove('end');
+                    endCell = null;
+                } else if (cell.classList.contains('obstacle')) {
+                    cell.classList.remove('obstacle');
+                } else {
+                    if (!startCell) {
+                        cell.classList.add('start');
+                        startCell = [row, col];
+                    } else if (!endCell) {
+                        cell.classList.add('end');
+                        endCell = [row, col];
+                    } else {
+                        cell.classList.add('obstacle');
+                    }
+                }
+            });
+        });*/
+    </script>
+    
+</body>
+
+</html>

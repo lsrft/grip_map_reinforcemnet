@@ -1,0 +1,27 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+        <p>這個沒有被block框起來會被繼承</p>
+    <header>
+        {% block header %}{% endblock %}
+        <p>this is also not been inheritatred</p>
+      </header>
+      
+      <main>
+        {% block content %}
+        <h1>nfdoivobfdoivgo</h1>
+        {% endblock %}
+        <h1>test 2</h1>
+      </main>
+    
+      <footer>
+        {% block footer %}{% endblock %}
+      </footer>
+</body>
+</html>

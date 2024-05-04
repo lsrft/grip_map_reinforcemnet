@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid Map Generator</title>
+    </head>
+
+    <body>
+        <div>
+            <h1 text-align:center>Grid Map Generator</h1>
+        <form action="/templates/grid" method="post">
+            <label for="dimension">Enter dimension (3-7):</label>
+            <input type="number" id="dimension" name="dimension" nim="3" max="7" required>
+            <button type="submit">Generate Grid</button>
+        </form>
+        </div>
+        
+    </body>
+
+</html>

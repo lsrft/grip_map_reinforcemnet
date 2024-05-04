@@ -2,7 +2,7 @@ from flask import Flask,render_template
 from flask import request
 import random
 
-app = Flask(__name__,template_folder="templates")
+app = Flask(__name__,template_folder="./")
 
 @app.route('/')
 def index():

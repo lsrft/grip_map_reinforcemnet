@@ -31,41 +31,56 @@
 </head>
 
 <body>
-    <h1 align="center">
+    <div>
+    <h1 class= "test"align="center"  onmouseenter="handleMouseOver">
         Grid Map
     </h1>
-    <!---<div id="grid">
-        <table id="cell" align="center" vertical-align="middle">
-            {%for row in grid %}
-            <tr>
-                {% for cell in row %}
-                <td class="cell">
-                    {{cell}}
-                </td>
-                {% endfor %}
-            </tr>
-            {%endfor%}
-        </table>
-    </div>---->
 
     <div id="grid" align="center">
         {%for row in grid %}
-        <div class="row">
+        <div id="row">
             {%for cell in row %}
-           <div class="cell" id="{{i}} - {{j}}">{{cell}}</div>
+           <label class="cell" id="cell">{{cell}}</label>
            {% endfor %}
         </div>
         {% endfor %}
     </div>
 
     <script>
+        function handleMouseOver() {
+            alert("Mouse hovered over the div!");
+        }
+        //handleMouseOver();
+    </script>
+
+    <script>
         let startcell = null;
         let endcell = null;
         
-        document.addEventListener("DOMContentLoaded"), function(){
-            const text = document.querySelector(".change-color");
 
-            text.addEventListener("mouseover",)
+        var test = document.querySelectorAll("#grid #row .cell");
+        var h1 = document.querySelector(".test");
+        h1.addEventListener("click",function(){
+            alert("hiosefhosef");
+        });
+
+        test.forEach(function(label){
+                label.addEventListener("mouseover",function(){
+                    alert("fjriogfhriogrg");
+            });
+        });
+
+        /*test.addEventListener("click",function(){
+            alert("fjriogfhriogrg");
+        });
+
+        /*document.addEventListener("DOMContentLoaded"), function(){
+            const text = document.getElementsByClassName(".cell");
+
+            text.addEventListener("mouseover",function(){
+                console.log("fheiurfghwieg");
+                alert("fhuirghiur");
+            });
         };
         /*document.querySelectorall('.cell').foreach(cell => {
             cell.addEventListener('click',() => {

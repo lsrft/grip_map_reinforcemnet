@@ -12,7 +12,7 @@ def index():
 def generate_grid():
     n = int(request.form['dimension'])
     grid = generate_grid_map(n)
-    return render_template('grid', grid=grid)
+    return render_template('grid', grid=grid , n = n)
 
 def generate_grid_map(n):
     # Generate your grid map logic here

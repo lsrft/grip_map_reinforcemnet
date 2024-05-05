@@ -32,11 +32,11 @@
 
 <body>
     <div>
-    <h1 class= "test"align="center"  onmouseenter="handleMouseOver">
+    <h1 class= "test" align = "center">
         Grid Map
     </h1>
 
-    <div id="grid" align="center">
+    <div id="grid" align = "center">
         {%for row in grid %}
         <div id="row">
             {%for cell in row %}
@@ -47,28 +47,52 @@
     </div>
 
     <script>
-        function handleMouseOver() {
-            alert("Mouse hovered over the div!");
-        }
-        //handleMouseOver();
-    </script>
+        const action = ['up','down','left','right'];
+        //let startcell = null;
+        //let endcell = null;
+        var count =  0;
+        let count_grey = 0;
+        var n = "{{n}}";
 
-    <script>
-        let startcell = null;
-        let endcell = null;
-        
+        let cell = document.querySelectorAll("#grid #row .cell");
+        let h1 = document.querySelector(".test");
+        /*h1.addEventListener("click",function(){
+            h1.style.color = "red";
+        });*/
+        //alert(n);
 
-        var test = document.querySelectorAll("#grid #row .cell");
-        var h1 = document.querySelector(".test");
-        h1.addEventListener("click",function(){
-            alert("hiosefhosef");
-        });
+            cell.forEach(function(label){
+                label.addEventListener("click",function(){
+                    if(count == 0){
+                        this.style.backgroundColor = "green";
+                        count++;
+                    }
+                    else if(count == 1){
+                        this.style.backgroundColor = "red";
+                        count++;
+                    }
+                    else if(count_grey<=n-2 && count!=0 && count!=1){
+                        if(this.style.backgroundColor != "red" && this.style.backgroundColor != "green")
+                            this.style.backgroundColor = "grey";
+                            count_grey++;
+                    }
+                    else
+                     randomly_action(action);
 
-        test.forEach(function(label){
-                label.addEventListener("mouseover",function(){
-                    alert("fjriogfhriogrg");
+                    console.log(count +','+ n);
             });
         });
+            
+        
+
+        function randomly_action(action){
+            const cell = document.querySelectorAll('#grid #row .cell');
+            cell.forEach(function(cell){
+                const value = Math.floor(Math.random()*4);
+                cell.textContent = action[value];
+                console.log(value);
+            });
+        }
 
         /*test.addEventListener("click",function(){
             alert("fjriogfhriogrg");
